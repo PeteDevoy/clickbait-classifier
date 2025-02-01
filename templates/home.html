@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clickbait Detector</title>
+    <link rel="stylesheet" href="/static/clickbait.css">
+</head>
+
+<body>
+    <main>
+        {% if is_clickbait %}
+        <div>
+            <div id="hook">
+                <div id="hook-title"></div>
+                <img src="/static/hook.svg" width="256" height="256" />
+            </div>
+            <div class="clickbait">
+                <h1>{{ title }}</h1>
+            </div>
+            <div id="jaggedy"></div>
+        </div>
+        <h2>Sounds like clickbait!</h2>
+        {% endif %}
+
+
+        {% if not is_clickbait and title%}
+        <h2>You won't believe this crazy result!</h2>
+        <h1>&quot;{{ title }}&quot;</h1>
+        <h2>Does <em>not</em> sound like clickbait!</h2>
+        {% endif %}
+
+        {% if title %}
+        <hr>
+        {% endif %}
+
+        <form method="GET" action="/">
+            <label for="headline">Enter a headline or YouTube video URL to classify as clickbait:</label>
+            <input type="text" name="headline" id="headline" value="{{ title|default('') }}" />
+            <button type="submit">Submit</button>
+        </form>
+        <hr>
+        <details id="credits">
+            <summary>Credits</summary>
+            <ul>
+                <li>Created by <a href="https://bakun.in">Peter Devoy</a></li>
+                <li>Trained on this <a
+                        href="https://www.kaggle.com/datasets/amananandrai/clickbait-dataset/data">clickbait dataset</a>
+                    from Aman Anand</li>
+                <li>Models from <a href="https://pypi.org/project/scikit-learn/">scikit-learn</a></li>
+                <li>Natural language processing with <a href="https://pypi.org/project/nltk/">NLTK</a></li>
+            </ul>
+        </details>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let input = document.getElementById("headline");
+            input.focus();
+            input.select();
+        });
+    </script>
+
+</body>
+</html>

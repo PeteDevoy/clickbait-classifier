@@ -1,0 +1,84 @@
+body {
+    background-image: url('/static/ripples.png');
+    background-blend-mode: multiply;
+    background-color: lightseagreen;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.clickbait {
+    background: white;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+
+}
+
+.clickbait h1 {
+    font-size: 2em;
+    margin:0 0 64px;
+
+}
+
+
+hr {
+    opacity: .5;
+}
+
+#jaggedy {
+    margin-top:-1px;
+    height:32px;
+    background-image: url('/static/jaggedy.svg');
+    background-repeat: repeat-x;
+}
+
+html, body, #hook {
+    padding:0;
+    margin: 0;
+}
+
+
+#hook {
+    position:relative;
+    height: 256px;
+    border-bottom:64px solid white;
+    box-sizing: border-box;
+}
+#hook img {
+    display: block;
+    float: right;
+}
+
+main {
+    margin: 0 auto;
+    min-width: 256px;
+    max-width: 78ch;
+}
+
+label {
+    font-size: 1.2em;
+    margin: .5em 0;
+    display: block;
+}
+
+input, button {
+    padding: .5em;
+    border: 1px solid gainsboro;
+    width: 100%;
+    box-sizing: border-box;
+    margin: .5em 0;
+    font-size: 1.2em;
+}
+
+button {
+    border-radius: .5em;
+    border: 1px solid #333;
+    font-weight: bold;
+}
+
+#credits {
+    text-align: left;
+}
